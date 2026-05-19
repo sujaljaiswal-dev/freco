@@ -76,15 +76,15 @@ export const FOOD_MENU: MenuItem[] = [
     category: 'Burgers',
     description: 'Juicy & Loaded',
     price: 0,
-    image: burgerImage
+    image: '/burger-c.png'
   },
   {
     id: 'f3',
-    name: 'PASTA',
+    name: 'NOODLES',
     category: 'Pasta',
     description: 'Creamy & Delicious',
     price: 0,
-    image: pastaImage
+    image: '/noodles-c.png'
   },
   {
     id: 'f4',
