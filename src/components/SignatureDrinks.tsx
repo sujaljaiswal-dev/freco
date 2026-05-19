@@ -5,12 +5,12 @@ import Scribbles from './Scribbles';
 
 export default function SignatureDrinks() {
   return (
-    <section className="relative py-24 bg-paper overflow-hidden">
+    <section className="relative py-16 -mt-10 sm:-mt-8 lg:-mt-10 bg-paper overflow-hidden">
       {/* Paper Texture Overlay */}
       <div className="absolute inset-0 opacity-40 pointer-events-none mix-blend-multiply" style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/natural-paper.png")' }} />
-      
+
       <Scribbles color="dark" />
-      
+
       {/* Torn Edge Top */}
       <div className="absolute top-0 left-0 right-0 h-8 bg-deep-black" style={{ clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 95% 40%, 90% 90%, 85% 30%, 80% 80%, 75% 10%, 70% 60%, 65% 20%, 60% 70%, 55% 15%, 50% 50%, 45% 10%, 40% 60%, 35% 20%, 30% 80%, 25% 30%, 20% 90%, 15% 40%, 10% 80%, 5% 50%, 0% 100%)' }} />
 
@@ -39,8 +39,8 @@ export default function SignatureDrinks() {
             >
               <div className="bg-warm-white p-4 rounded-xl shadow-xl space-y-4 border border-charcoal/5 transition-transform duration-500 group-hover:-translate-y-2">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-paper">
-                  <img 
-                    src={drink.image} 
+                  <img
+                    src={drink.image}
                     alt={drink.name}
                     loading="lazy"
                     decoding="async"
@@ -51,7 +51,7 @@ export default function SignatureDrinks() {
                     {drink.character}
                   </div>
                 </div>
-                
+
                 <div className="flex justify-between items-end">
                   <div className="space-y-1">
                     <h3 className="font-manga text-xl text-primary-orange leading-none">{drink.name.split(' ')[0]}</h3>

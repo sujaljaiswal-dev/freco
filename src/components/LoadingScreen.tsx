@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { SITE_LOGO_IMAGE } from '../constants';
 
 interface LoadingScreenProps {
   progress: number;
@@ -10,8 +11,8 @@ export default function LoadingScreen({ progress }: LoadingScreenProps) {
     <motion.div
       initial={{ opacity: 1, x: 0 }}
       exit={{ x: '100%' }}
-      transition={{ 
-        duration: 0.6, 
+      transition={{
+        duration: 0.6,
         ease: [0.33, 1, 0.68, 1], // circOut for a very smooth but energetic finish
       }}
       className="fixed inset-0 z-[1000] bg-deep-black flex flex-col items-center justify-center overflow-hidden"
@@ -30,13 +31,13 @@ export default function LoadingScreen({ progress }: LoadingScreenProps) {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="relative"
         >
-          <img 
-            src="/logo.jpg" 
-            alt="FreCo Logo" 
+          <img
+            src={SITE_LOGO_IMAGE}
+            alt="FreCo Logo"
             className="h-32 md:h-40 w-auto object-contain rounded-xl shadow-2xl"
           />
           {/* Pulsing ring around logo */}
-          <motion.div 
+          <motion.div
             animate={{ scale: [1, 1.1, 1], opacity: [0.1, 0.3, 0.1] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             className="absolute -inset-4 border border-primary-orange/30 rounded-2xl pointer-events-none"
@@ -45,7 +46,7 @@ export default function LoadingScreen({ progress }: LoadingScreenProps) {
 
         {/* Loading Text */}
         <div className="space-y-4">
-          <motion.h2 
+          <motion.h2
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3 }}
@@ -53,7 +54,7 @@ export default function LoadingScreen({ progress }: LoadingScreenProps) {
           >
             Brewing <span className="text-primary-orange">Greatness</span>
           </motion.h2>
-          
+
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.4 }}
@@ -70,16 +71,16 @@ export default function LoadingScreen({ progress }: LoadingScreenProps) {
             <span className="text-[10px] uppercase font-bold tracking-widest text-primary-orange">EST. 2024</span>
             <span className="text-sm font-display italic text-warm-white">{Math.round(progress)}%</span>
           </div>
-          
+
           <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden relative">
-            <motion.div 
+            <motion.div
               initial={{ width: 0 }}
               animate={{ width: `${progress}%` }}
               transition={{ ease: "easeOut" }}
               className="h-full bg-primary-orange shadow-[0_0_15px_rgba(242,90,29,0.8)] relative"
             >
               {/* Shine effect on bar */}
-              <motion.div 
+              <motion.div
                 animate={{ left: ['-100%', '200%'] }}
                 transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
                 className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-20deg]"
@@ -94,20 +95,20 @@ export default function LoadingScreen({ progress }: LoadingScreenProps) {
         {[...Array(15)].map((_, i) => (
           <motion.div
             key={i}
-            initial={{ 
-              opacity: 0, 
-              y: '110vh', 
+            initial={{
+              opacity: 0,
+              y: '110vh',
               x: Math.random() * 100 + 'vw',
-              scale: Math.random() * 0.5 + 0.3 
+              scale: Math.random() * 0.5 + 0.3
             }}
-            animate={{ 
-              opacity: [0, 1, 0], 
+            animate={{
+              opacity: [0, 1, 0],
               y: '-10vh',
               x: (Math.random() * 60 - 30) + 'px'
             }}
-            transition={{ 
-              duration: Math.random() * 4 + 4, 
-              repeat: Infinity, 
+            transition={{
+              duration: Math.random() * 4 + 4,
+              repeat: Infinity,
               ease: "linear",
               delay: Math.random() * 2
             }}

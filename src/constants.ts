@@ -1,8 +1,22 @@
 import { MenuItem, Event } from './types';
 
-export const HERO_BG_IMAGE = '/src/assets/images/herosection-back.png';
-export const HERO_IMAGE = '/src/assets/images/luffy-p.png';
-export const ANIME_WALL = '/src/assets/images/anime_wall_png_1779176192945.png';
+import heroBackgroundImage from './assets/images/herosection-back.png';
+import heroCharacterImage from './assets/images/luffy-p.png';
+import animeWallImage from './assets/images/anime_wall_png_1779176192945.png';
+import vegetaDrinkImage from './assets/images/drink_vegeta_png_1779176033354.png';
+import nezukoDrinkImage from './assets/images/drink_nezuko_png_1779176055807.png';
+import piccoloDrinkImage from './assets/images/drink_piccolo_png_1779176072060.png';
+import luffyDrinkImage from './assets/images/hero_luffy_cafe_png_1779175997219.png';
+import burgerImage from './assets/images/food_burger_png_1779176110082.png';
+import pastaImage from './assets/images/food_pasta_png_1779176129033.png';
+import siteLogoImage from '../logo.jpg';
+import japaneseBadgeImage from '../japanese-badge.png';
+
+export const HERO_BG_IMAGE = heroBackgroundImage;
+export const HERO_IMAGE = heroCharacterImage;
+export const ANIME_WALL = animeWallImage;
+export const SITE_LOGO_IMAGE = siteLogoImage;
+export const JAPANESE_BADGE_IMAGE = japaneseBadgeImage;
 
 export const SIGNATURE_DRINKS: MenuItem[] = [
   {
@@ -18,7 +32,7 @@ export const SIGNATURE_DRINKS: MenuItem[] = [
     name: 'VEGETA Espresso',
     category: 'Espresso',
     price: 248,
-    image: '/src/assets/images/drink_vegeta_png_1779176033354.png',
+    image: vegetaDrinkImage,
     character: 'Vegeta'
   },
   {
@@ -26,7 +40,7 @@ export const SIGNATURE_DRINKS: MenuItem[] = [
     name: 'NEZUKO Cappuccino',
     category: 'Cappuccino',
     price: 258,
-    image: '/src/assets/images/drink_nezuko_png_1779176055807.png',
+    image: nezukoDrinkImage,
     character: 'Nezuko'
   },
   {
@@ -34,7 +48,7 @@ export const SIGNATURE_DRINKS: MenuItem[] = [
     name: 'PICCOLO Latte',
     category: 'Piccolo Latte',
     price: 248,
-    image: '/src/assets/images/drink_piccolo_png_1779176072060.png',
+    image: piccoloDrinkImage,
     character: 'Piccolo'
   },
   {
@@ -42,7 +56,7 @@ export const SIGNATURE_DRINKS: MenuItem[] = [
     name: 'LUFFY Pizza Latte',
     category: 'Pizza Latte',
     price: 248,
-    image: '/src/assets/images/hero_luffy_cafe_png_1779175997219.png',
+    image: luffyDrinkImage,
     character: 'Luffy'
   }
 ];
@@ -62,7 +76,7 @@ export const FOOD_MENU: MenuItem[] = [
     category: 'Burgers',
     description: 'Juicy & Loaded',
     price: 0,
-    image: '/burger-c.png'
+    image: burgerImage
   },
   {
     id: 'f3',
@@ -70,7 +84,7 @@ export const FOOD_MENU: MenuItem[] = [
     category: 'Pasta',
     description: 'Creamy & Delicious',
     price: 0,
-    image: '/noodles-c.png'
+    image: pastaImage
   },
   {
     id: 'f4',
@@ -127,8 +141,8 @@ export const EVENTS: Event[] = [
 
 export const SOCIAL_GALLERY = [
   '/goku-americano.png',
-  '/src/assets/images/anime_wall_png_1779176192945.png',
-  '/src/assets/images/food_burger_png_1779176110082.png',
-  '/src/assets/images/food_pasta_png_1779176129033.png',
-  '/src/assets/images/drink_piccolo_png_1779176072060.png'
+  animeWallImage,
+  burgerImage,
+  pastaImage,
+  piccoloDrinkImage
 ];

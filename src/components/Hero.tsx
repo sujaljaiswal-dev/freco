@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { Play, ArrowRight } from 'lucide-react';
-import { HERO_IMAGE, HERO_BG_IMAGE } from '../constants';
+import { HERO_IMAGE, HERO_BG_IMAGE, JAPANESE_BADGE_IMAGE } from '../constants';
 
 export default function Hero() {
   const containerVariants = {
@@ -35,9 +35,9 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-[85vh] lg:min-h-[60vh] flex items-end pt-36 lg:pt-24 overflow-hidden bg-deep-black">
+    <section className="relative min-h-[92vh] lg:min-h-[68vh] flex items-end pt-36 pb-10 lg:pt-24 lg:pb-14 overflow-hidden bg-deep-black">
       {/* 01. START - BLACK SCREEN & OVERLAY */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 1 }}
         animate={{ opacity: 0 }}
         transition={{ duration: 1, ease: "easeInOut", delay: 0.3 }}
@@ -49,20 +49,20 @@ export default function Hero() {
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
-            initial={{ 
-              opacity: 0, 
-              y: '110vh', 
+            initial={{
+              opacity: 0,
+              y: '110vh',
               x: Math.random() * 100 + 'vw',
-              scale: Math.random() * 0.5 + 0.5 
+              scale: Math.random() * 0.5 + 0.5
             }}
-            animate={{ 
-              opacity: [0, 0.8, 0], 
+            animate={{
+              opacity: [0, 0.8, 0],
               y: '-10vh',
               x: (Math.random() * 100 - 50) + 'px'
             }}
-            transition={{ 
-              duration: Math.random() * 5 + 5, 
-              repeat: Infinity, 
+            transition={{
+              duration: Math.random() * 5 + 5,
+              repeat: Infinity,
               ease: "linear",
               delay: Math.random() * 5
             }}
@@ -73,18 +73,18 @@ export default function Hero() {
 
       {/* 02. BACKGROUND FADE IN & SUBTLE ZOOM */}
       <div className="absolute inset-0 z-0">
-        <motion.div 
-           initial={{ opacity: 0 }}
-           animate={{ opacity: 1 }}
-           transition={{ duration: 1.5, ease: "easeInOut", delay: 0 }}
-           className="absolute inset-0 bg-gradient-to-r from-deep-black via-deep-black/35 to-transparent z-10" 
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, ease: "easeInOut", delay: 0 }}
+          className="absolute inset-0 bg-gradient-to-r from-deep-black via-deep-black/35 to-transparent z-10"
         />
-        <motion.img 
+        <motion.img
           initial={{ scale: 1.05, opacity: 0 }}
           animate={{ scale: 1, opacity: 0.7 }}
           transition={{ duration: 2.0, ease: "easeOut" }}
-          src={HERO_BG_IMAGE} 
-          alt="Cafe Interior" 
+          src={HERO_BG_IMAGE}
+          alt="Cafe Interior"
           loading="eager"
           decoding="sync"
           className="w-full h-full object-cover filter brightness-[0.8]"
@@ -96,15 +96,15 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-20 flex flex-row items-end justify-between mt-16 lg:mt-0 lg:pt-8">
         <div className="space-y-6 md:space-y-8 mb-12 lg:mb-12 w-[60%] sm:w-[55%] md:w-1/2 shrink-0 z-30 pb-4 md:pb-0">
           {/* 03. BADGE SLIDES IN (LEFT) */}
-          <motion.div 
+          <motion.div
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 0.8 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
             className="hidden sm:block absolute -left-8 md:-left-12 lg:-left-24 top-0 lg:top-8 w-20 md:w-28 lg:w-36 z-20"
           >
-            <img 
-              src="/japanese-badge.png" 
-              alt="Japanese Badge" 
+            <img
+              src={JAPANESE_BADGE_IMAGE}
+              alt="Japanese Badge"
               loading="eager"
               decoding="sync"
               className="w-full h-auto object-contain drop-shadow-lg"
@@ -112,7 +112,7 @@ export default function Hero() {
           </motion.div>
 
           {/* 04-07. TEXT ANIMATION - LINE BY LINE */}
-          <motion.div 
+          <motion.div
             initial="hidden"
             animate="visible"
             variants={{
@@ -127,12 +127,12 @@ export default function Hero() {
           >
             <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] font-display leading-[0.75] tracking-tighter uppercase italic flex flex-col items-start md:ml-20 lg:ml-32">
               <motion.span variants={lineVariants} className="z-10 text-2xl sm:text-3xl md:text-5xl lg:text-7xl">Where</motion.span>
-              <motion.span 
-                variants={lineVariants} 
+              <motion.span
+                variants={lineVariants}
                 className="text-6xl sm:text-7xl md:text-9xl lg:text-[9.5rem] text-primary-orange text-glow-orange -rotate-1 origin-left -mt-1 sm:-mt-2 md:-mt-4 lg:-mt-5 z-20 relative"
               >
                 Anime
-                <motion.div 
+                <motion.div
                   initial={{ left: '-100%' }}
                   animate={{ left: '100%' }}
                   transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 3, ease: "easeInOut" }}
@@ -140,12 +140,12 @@ export default function Hero() {
                 />
               </motion.span>
               <motion.span variants={lineVariants} className="-mt-0.5 sm:-mt-1 md:-mt-2 lg:-mt-3 z-30 text-xl sm:text-2xl md:text-4xl lg:text-5xl">Meets</motion.span>
-              <motion.span 
-                variants={lineVariants} 
+              <motion.span
+                variants={lineVariants}
                 className="text-6xl sm:text-7xl md:text-9xl lg:text-[9.5rem] text-primary-orange text-glow-orange rotate-1 origin-left -mt-1 sm:-mt-2 md:-mt-4 lg:-mt-5 z-40 relative"
               >
                 Coffee
-                <motion.div 
+                <motion.div
                   initial={{ left: '-100%' }}
                   animate={{ left: '100%' }}
                   transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 3, ease: "easeInOut", delay: 0.5 }}
@@ -156,7 +156,7 @@ export default function Hero() {
           </motion.div>
 
           {/* 11. BUTTONS FADE & RISE IN */}
-          <motion.div 
+          <motion.div
             initial="hidden"
             animate="visible"
             variants={{
@@ -197,10 +197,10 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.94, y: 120, rotate: 2 }}
           animate={{ opacity: 1, scale: 1, y: 0, rotate: 0 }}
           transition={{ duration: 1.2, ease: [0.34, 1.56, 0.64, 1], delay: 3.0 }}
-          className="relative w-[50%] md:w-1/2 h-[45vh] lg:h-[60vh] flex items-end justify-center -ml-4 sm:-ml-8 md:ml-0 -mr-12 sm:mr-0 md:translate-x-24 lg:translate-x-0"
+          className="relative w-[50%] md:w-1/2 h-[45vh] lg:h-[60vh] flex items-end justify-center -ml-4 sm:-ml-8 md:ml-0 -mr-12 sm:mr-0 md:translate-x-24 lg:translate-x-0 lg:-mt-6"
         >
           {/* Subtle Idle floating motion for Luffy */}
-          <motion.div 
+          <motion.div
             animate={{ y: [0, -6, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             className="relative flex items-end justify-center w-full h-full"
@@ -211,25 +211,25 @@ export default function Hero() {
               alt="Luffy Cafe Illustration"
               loading="eager"
               decoding="sync"
-              className="relative z-10 w-[250%] sm:w-[200%] lg:w-[230%] h-auto max-h-[85vh] object-contain object-bottom drop-shadow-[0_0_50px_rgba(242,90,29,0.3)] origin-bottom -mb-2 [mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)] max-w-none"
+              className="relative z-10 w-[250%] sm:w-[200%] lg:w-[230%] h-auto max-h-[85vh] object-contain object-bottom drop-shadow-[0_0_50px_rgba(242,90,29,0.3)] origin-bottom -mb-2 max-w-none lg:translate-y-6"
             />
-            
+
             {/* 10. POSTER POP IN (GOOD FOOD...) */}
-            <motion.div 
+            <motion.div
               initial={{ scale: 0, rotate: -10, opacity: 0 }}
               animate={{ scale: 1, rotate: 0, opacity: 1 }}
               transition={{ type: "spring", stiffness: 260, damping: 20, delay: 4.2 }}
               className="absolute -top-20 sm:-top-8 lg:-top-12 right-[40vw] sm:right-0 lg:-right-8 w-36 sm:w-32 md:w-40 lg:w-48 z-20 pointer-events-none"
             >
-            <img 
-                src="/poster-img.png" 
-                alt="Good Food Good Mood Poster" 
+              <img
+                src="/poster-img.png"
+                alt="Good Food Good Mood Poster"
                 loading="eager"
                 decoding="sync"
                 className="w-full h-auto object-contain drop-shadow-[5px_10px_20px_rgba(0,0,0,0.6)]"
               />
               {/* Manga Impact effect around poster */}
-              <motion.div 
+              <motion.div
                 animate={{ scale: [1, 1.1, 1], opacity: [0, 0.5, 0] }}
                 transition={{ duration: 0.5, delay: 4.5 }}
                 className="absolute inset-0 border-4 border-white/30 rounded-lg scale-150 blur-sm pointer-events-none"
@@ -237,25 +237,25 @@ export default function Hero() {
             </motion.div>
 
             {/* CINEMATIC COFFEE STEAM */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.9 }}
               transition={{ delay: 3.8, duration: 1 }}
               className="steam-container absolute top-[-10%] left-[-30%] sm:top-[5%] sm:left-[5%] md:top-[0%] md:left-[10%] lg:top-[-5%] lg:left-[15%]"
             >
               {[...Array(6)].map((_, i) => (
-                <motion.span 
+                <motion.span
                   key={i}
-                  animate={{ 
-                    y: [0, -100], 
+                  animate={{
+                    y: [0, -100],
                     opacity: [0, 1, 0],
                     x: [0, (i % 2 === 0 ? 20 : -20), 0],
                     scale: [1, 1.5, 2],
                     filter: ['blur(4px)', 'blur(12px)']
                   }}
-                  transition={{ 
-                    duration: 3 + i * 0.5, 
-                    repeat: Infinity, 
+                  transition={{
+                    duration: 3 + i * 0.5,
+                    repeat: Infinity,
                     delay: i * 0.4,
                     ease: "easeOut"
                   }}
@@ -268,7 +268,7 @@ export default function Hero() {
       </div>
 
       {/* Floating Sketches/Doodles Decor */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.1 }}
         transition={{ delay: 4.5, duration: 1 }}

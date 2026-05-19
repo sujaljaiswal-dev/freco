@@ -3,7 +3,7 @@ import { AnimatePresence } from 'motion/react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import LoadingScreen from './components/LoadingScreen';
-import { HERO_BG_IMAGE, HERO_IMAGE } from './constants';
+import { HERO_BG_IMAGE, HERO_IMAGE, SITE_LOGO_IMAGE, JAPANESE_BADGE_IMAGE } from './constants';
 
 const SignatureDrinks = lazy(() => import('./components/SignatureDrinks'));
 const FoodMenu = lazy(() => import('./components/FoodMenu'));
@@ -20,8 +20,8 @@ export default function App() {
     const criticalImages = [
       HERO_BG_IMAGE,
       HERO_IMAGE,
-      '/logo.jpg',
-      '/japanese-badge.png',
+      SITE_LOGO_IMAGE,
+      JAPANESE_BADGE_IMAGE,
       '/poster-img.png'
     ];
 
@@ -32,7 +32,7 @@ export default function App() {
       loadedCount++;
       const progress = (loadedCount / totalImages) * 100;
       setLoadingProgress(progress);
-      
+
       if (loadedCount === totalImages) {
         // Reduced delay for a faster feel
         setTimeout(() => {

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, Calendar, X } from 'lucide-react';
+import { SITE_LOGO_IMAGE } from '../constants';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,7 +9,7 @@ export default function Header() {
   const menuItems = ['Home', 'Menu', 'Gallery', 'Events', 'About Us', 'Contact'];
 
   return (
-    <motion.header 
+    <motion.header
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
@@ -17,7 +18,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between relative">
         {/* Left Side: Hamburger Menu (Mobile) */}
         <div className="lg:hidden flex items-center z-50">
-          <button 
+          <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="text-warm-white p-2"
           >
@@ -27,9 +28,9 @@ export default function Header() {
 
         {/* Center: Logo (Mobile) / Left: Logo (Desktop) */}
         <div className="absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 z-50">
-          <img 
-            src="/logo.jpg" 
-            alt="FreCo Logo" 
+          <img
+            src={SITE_LOGO_IMAGE}
+            alt="FreCo Logo"
             loading="eager"
             decoding="sync"
             className="h-28 md:h-40 lg:h-48 w-auto object-contain rounded-lg shadow-xl"
@@ -87,10 +88,10 @@ export default function Header() {
                 </motion.a>
               ))}
             </nav>
-            
+
             {/* Visual Accents in Mobile Menu */}
             <div className="absolute bottom-20 left-0 right-0 flex justify-center opacity-10 pointer-events-none">
-              <img src="/logo.jpg" className="w-64 grayscale invert" alt="" />
+              <img src={SITE_LOGO_IMAGE} className="w-64 grayscale invert" alt="" />
             </div>
           </motion.div>
         )}

@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Phone, Mail, MapPin, ArrowUp, Heart } from 'lucide-react';
+import { SITE_LOGO_IMAGE } from '../constants';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -15,22 +16,22 @@ export default function Footer() {
         {/* Top Section: Logo & Luffy (Mobile + Desktop) */}
         <div className="flex flex-row items-end justify-between mb-8 lg:mb-12">
           <div className="space-y-4 max-w-[50%] md:max-w-[40%]">
-            <img 
-              src="/logo.jpg" 
-              alt="FreCo Logo" 
+            <img
+              src={SITE_LOGO_IMAGE}
+              alt="FreCo Logo"
               loading="lazy"
               decoding="async"
-              className="h-24 md:h-32 lg:h-40 w-auto object-contain rounded-lg" 
+              className="h-24 md:h-32 lg:h-40 w-auto object-contain rounded-lg"
             />
             <p className="text-warm-white/60 font-sans text-sm leading-relaxed">
               A modern anime-inspired cafe serving comfort food, good coffee and great memories.
             </p>
           </div>
-          
+
           <div className="relative -mb-8 md:-mb-12 lg:-mb-16 z-20">
-            <img 
-              src="/see-you-soon.png" 
-              alt="Luffy See You Soon" 
+            <img
+              src="/see-you-soon.png"
+              alt="Luffy See You Soon"
               loading="lazy"
               decoding="async"
               className="h-56 md:h-72 lg:h-96 w-auto object-contain drop-shadow-2xl"
@@ -87,10 +88,10 @@ export default function Footer() {
               </ul>
             </div>
           </div>
-          
+
           {/* Scroll to Top inside card bottom right for mobile feel */}
           <div className="absolute bottom-4 right-4 md:bottom-8 md:right-8">
-            <button 
+            <button
               onClick={scrollToTop}
               className="w-12 h-12 bg-primary-orange rounded-full flex items-center justify-center text-[#0A0A0A] hover:scale-110 transition-all active:scale-95 shadow-xl group"
             >
