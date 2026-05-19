@@ -1,0 +1,6 @@
+{
+  "name": "FreCo | Anime Cafe & Cuisine",
+  "description": "An immersive anime-themed cafe experience featuring manga-inspired design, signature character drinks, and a warm cinematic atmosphere.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
