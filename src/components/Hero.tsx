@@ -163,7 +163,7 @@ export default function Hero() {
               visible: {
                 transition: {
                   staggerChildren: 0.1,
-                  delayChildren: 4.8,
+                  delayChildren: 4.0,
                 }
               }
             }}
@@ -196,7 +196,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, scale: 0.94, y: 120, rotate: 2 }}
           animate={{ opacity: 1, scale: 1, y: 0, rotate: 0 }}
-          transition={{ duration: 1.2, ease: [0.34, 1.56, 0.64, 1], delay: 3.0 }}
+          transition={{ duration: 1.2, ease: [0.34, 1.56, 0.64, 1], delay: 2.4 }}
           className="relative w-[50%] md:w-1/2 h-[45vh] lg:h-[60vh] flex items-end justify-center -ml-4 sm:-ml-8 md:ml-0 -mr-12 sm:mr-0 md:translate-x-24 lg:translate-x-0 lg:-mt-6"
         >
           {/* Subtle Idle floating motion for Luffy */}
@@ -218,7 +218,7 @@ export default function Hero() {
             <motion.div
               initial={{ scale: 0, rotate: -10, opacity: 0 }}
               animate={{ scale: 1, rotate: 0, opacity: 1 }}
-              transition={{ type: "spring", stiffness: 260, damping: 20, delay: 4.2 }}
+              transition={{ type: "spring", stiffness: 260, damping: 20, delay: 3.2 }}
               className="absolute -top-20 sm:-top-8 lg:-top-12 right-[40vw] sm:right-0 lg:-right-8 w-36 sm:w-32 md:w-40 lg:w-48 z-20 pointer-events-none"
             >
               <img
